@@ -189,15 +189,14 @@ namespace ISM6225_Fall_2023_Assignment_2
             try
             {
                 // Write your code here and you can modify the return value according to the requirements
-                Dictionary<char, char> goodbracketcombos = new Dictionary<char, char> // creat dict to establish valid input
+                Dictionary<char, char> goodbracketcombos = new Dictionary<char, char> // create dictionary to establish valid input
                 {
                     {'(', ')' },
                     {'[', ']' },
                     {'{', '}' }
                 };
 
-                List<char> bracketopen = new List<char>(); // keeps track of open brackets to be closed
-
+                List<char> bracketopen = new List<char>(); 
                 for (int i = 0; i < s.Length; i++)
                 {
                     char c = s[i]; //take what is in this position of the string and save it to 'c'
@@ -216,7 +215,7 @@ namespace ISM6225_Fall_2023_Assignment_2
                         bracketopen.RemoveAt(bracketopen.Count - 1); // reset the bracket tracker
                     }
                 }
-                return bracketopen.Count == 0; // checks if all open brackets have been closed, i.e. the count will be 0.  returns true if the count = 0
+                return bracketopen.Count == 0; // checks if all open brackets have been closed.
 
                 //return s.Length == 0;
             }
@@ -261,9 +260,9 @@ namespace ISM6225_Fall_2023_Assignment_2
                 int maxprofit = 0;
                 int lowprice = prices[0];
 
-                for (int i = 1; i < prices.Length; i++) //start loop w/ i = 1 because we already set the lowprice value to [0]
+                for (int i = 1; i < prices.Length; i++) //start loop with i = 1 because we already set the lowprice value to [0]
                 {
-                    if (prices[i] < lowprice) //this loop - looking for the lowest stock price and assigning to lowprice
+                    if (prices[i] < lowprice) //this loop if negative looking for the lowest stock price and assigns it to lowprice
                     {
                         lowprice = prices[i];
                     }
@@ -329,7 +328,7 @@ namespace ISM6225_Fall_2023_Assignment_2
                     char leftchar = s[leftpointer];  //  getting the chars to compare
                     char rightchar = s[rightpointer];
 
-                    if (!strobopairs.Contains($"{leftchar}{rightchar}")) //checking if the number pair is in the apprvoed list strobopairs
+                    if (!strobopairs.Contains($"{leftchar}{rightchar}")) //checking if the number pair is in the requested list strobopairs
                     {
                         return false; //if the pair is not indexer the hashset, answer is false
                     }
